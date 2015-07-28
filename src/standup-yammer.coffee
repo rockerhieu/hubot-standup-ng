@@ -34,7 +34,7 @@ querystring = require 'querystring'
 postYammer = (robot, group, room, response, logs) ->
   group_id = getYammerGroup robot, group
   if group_id is undefined
-    response.send "Tell me which Yammer group to post archives. Say 'hubot post #{group} standup logs to <GROUP_ID>'. Use Group ID 0 if you don't need archives."
+    response.send "Tell me which Yammer group to post archives. Say 'post #{group} standup logs to <GROUP_ID>'. Use Group ID 0 if you don't need archives."
     robot.brain.data.tempYammerBuffer or= {}
     robot.brain.data.tempYammerBuffer[group] = logs
   else if group_id is 0
